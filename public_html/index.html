@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Count to ...</title>
+  </head>
+  <body>
+
+  <progress id="pbar" value="0" max="11" style="width: 100%"></progress>
+
+  <script type="text/javascript">
+    var pBar = document.getElementById('pbar');
+    var updateProgress = function(value) {
+      pBar.value = value;
+    }
+
+    var ws = new WebSocket('ws://localhost:8080/');
+
+    ws.onmessage = function(event) {
+      updateProgress(event.data);
+    };
+
+  </script>
+</html>
+

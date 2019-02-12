@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+#!/bin/bash
+
+for ((COUNT = 0; COUNT <= 11; COUNT++)); do
+  echo $COUNT
+  sleep 0.5
+done
